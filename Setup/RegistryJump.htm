@@ -1,0 +1,24 @@
+<script language="javascript" defer>
+	var win = external.menuArguments;
+	var str = getSelectedText(win);
+	if(str != null && str.length !== 0) {
+		var ws = new ActiveXObject("WScript.Shell");
+		try {
+			ws.Run("\"C:\\Program Files (x86)\\DevTools\\RegistryJump\\RegistryJump.exe\" \"" + str + "\"");
+		}
+		catch(ex) {
+			alert('Sorry... an error occured.');
+		}
+		delete ws;
+	}
+	function getSelectedText(win) {
+		var range = win.getSelection();
+		if (range) { // All browsers, except IE before version 9.
+			return range.toString();
+		}
+		else { // IE before version 9.
+			range = win.document.selection.createRange();
+			return range ? range.text : null;
+		}
+	}
+</script>

@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+; -- Add Run Menu Shortcut
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\RegistryJump.exe]
+@="C:\\Program Files (x86)\\DevTools\\RegistryJump\\RegistryJump.exe"
+"path"="C:\\Program Files (x86)\\DevTools\\RegistryJump\\"
+
+; -- Add Internet Explorer Context Menu Shortcut
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\MenuExt\Open key with RegistryJump]
+@="file://C:/Program Files (x86)/DevTools/RegistryJump/registryjump.htm"
+ 
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\MenuExt\Open key with RegistryJump]
+"contexts"=hex:10
