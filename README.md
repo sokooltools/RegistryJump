@@ -1,7 +1,7 @@
 # RegistryJump
 Provides an easy-to-use GUI for jumping directly to a specific hive inside the Windows Registry.
 
-![Main Window](images/image1.png?raw=true "This is the main window.")
+![Main Window](https://github.com/sokooltools/registryjump/images/image1.png?raw=true "This is the main window.")
 ### Options
 RegistryJump.exe can also be called directly from the command line.
 
