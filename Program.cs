@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// (c) Copyright 2006-2017  SokoolTools
+// (c) Copyright 2006-2019  SokoolTools
 //
 // Description: Main Program
 //
@@ -42,7 +42,6 @@ namespace DevTools.RegistryJump
 					// In certain cases when the key contains spaces it may be received as multiple 
 					// input arguments so just join them back together and hope for the best.
 					string currentKey = string.Join(" ", args);
-
 					if (currentKey.StartsWith("chrome-extension:"))
 						Chrome.Run();
 					else

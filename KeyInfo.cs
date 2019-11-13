@@ -116,7 +116,7 @@ namespace DevTools.RegistryJump
 		{
 			string name;
 
-			// Remove spaces, square-brackets, and double-quotes from the beginning and end of the key.
+			// Remove spaces, square-brackets, and double-quotes from the beginning and the end of the key.
 			char[] removeChars = { ' ', '[', ']', '"', '\\' };
 			key = key.Trim(removeChars);
 

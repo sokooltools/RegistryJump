@@ -85,6 +85,5 @@ namespace DevTools.RegistryJump
 			foreach (string s in aList)
 				RecentKeys.Add(s);
 		}
-
 	}
 }
