@@ -4,7 +4,7 @@
 // Description: Main Program
 //
 // Modification Notes:
-// Date		Author        	Notes
+// Date		Author        	Notesx
 // -------- -------------- --------------------------------------------------
 // 12/01/06	RSokol			Initial Development
 //////////////////////////////////////////////////////////////////////////////

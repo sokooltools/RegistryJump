@@ -18,7 +18,7 @@ RegistryJump.exe can also be called directly from the command line.
 <div>Company: SokoolTools</div>
 <div>History: Initial Release March 1, 2006</div>
 <hr/>
-  
+   
    
 This application allows you to quickly jump directly to a node in the registry using 1 of 3 methods:
 
