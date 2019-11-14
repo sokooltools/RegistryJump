@@ -174,8 +174,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Externals\Newtonsoft.Json.dll" />
+    <Content Include="Externals\Newtonsoft.Json.xml" />
     <Content Include="Images\image1.png" />
     <Content Include="Images\RegistryJump.png" />
+    <Content Include="license.txt" />
     <Content Include="setup\Readme.txt" />
     <Content Include="setup\RegistryJump.htm" />
     <Content Include="setup\RegistryJump.test.htm" />
