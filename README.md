@@ -1,12 +1,12 @@
 # RegistryJump
 Provides an easy-to-use GUI for jumping directly to a specific hive inside the Windows Registry.
 
-![Main Window](images/image1.png "This is the main window.")
+![Image1](images/image1.png "This is the main window.")
 
 You can type or paste the string containing the hive directly into the field or select a previously visited hive from the drop-down.
 
 You can optionally click the *Browse* button to open the registry to the last opened hive.
-
+![Image2](images/image2.png "This is the Open drop-down list expanded")
 ### Options
 RegistryJump.exe can also be called directly from the command line.
 

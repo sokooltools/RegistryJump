@@ -2,7 +2,7 @@
 
 if "%5" NEQ "" (goto:SKIP)
 
-title DevTools: Post-Build
+title SokoolTools: Post-Build
 
 @echo ===============================================================================================================
 @echo = (c) 2012-2019 SokoolTools.
@@ -77,22 +77,22 @@ if errorlevel 1 (
 )
 
 echo ======================================================================================
-echo = Copy the target files to the "%%PROGRAMFILES(X86)%%\DevTools\.." folder. 
+echo = Copy the target files to the "%%PROGRAMFILES(X86)%%\SokoolTools\.." folder. 
 echo ======================================================================================
 echo.
 set src="%TargetPath%.*"
-set dst="%PROGRAMFILES(X86)%\DevTools\%ProjectName%\*"
+set dst="%PROGRAMFILES(X86)%\SokoolTools\%ProjectName%\*"
 echo  Copying %src%
 echo       to %dst%
 echo    (Note: only new or modified files are copied.)
 xcopy /y/q/d %src%  %dst%
 echo.
 echo ======================================================================================
-echo = Copy the 'Setup' files to the "%%PROGRAMFILES(X86)%%\DevTools\.." folder.
+echo = Copy the 'Setup' files to the "%%PROGRAMFILES(X86)%%\SokoolTools\.." folder.
 echo ======================================================================================
 echo.
 set src="%ProjectDir%Setup\*.*"
-set dst="%PROGRAMFILES(x86)%\DevTools\%ProjectName%\*"
+set dst="%PROGRAMFILES(x86)%\SokoolTools\%ProjectName%\*"
 echo  Copying %src%
 echo       to %dst%
 echo    (Note: only new or modified files are copied.)
