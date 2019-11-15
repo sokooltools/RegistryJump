@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// (c) Copyright 2006-2007  SokoolTools
+// (c) Copyright 2006-2019  SokoolTools
 //
 // Description: Main Form
 //
@@ -44,8 +44,8 @@ namespace DevTools.RegistryJump
 		//----------------------------------------------------------------------------------------------------
 		private string CurrentKey
 		{
-			get { return cboKey.Text; }
-			set { cboKey.Text = value; }
+			get => cboKey.Text;
+			set => cboKey.Text = value;
 		}
 
 		//----------------------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ namespace DevTools.RegistryJump
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message, "RegistryJump", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(ex.Message, @"RegistryJump", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 

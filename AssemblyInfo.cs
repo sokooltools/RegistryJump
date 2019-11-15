@@ -1,7 +1,7 @@
 using System.Reflection;
 
 [assembly: AssemblyTitle("RegistryJump")]
-[assembly: AssemblyDescription("Jumps to a specific hive in the registry")]
+[assembly: AssemblyDescription("Jumps directly to a specific hive in the registry")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SokoolTools")]
 [assembly: AssemblyProduct("")]

@@ -1,14 +1,15 @@
 # RegistryJump
-Provides an easy-to-use GUI for jumping directly to a specific hive inside the Windows Registry.
+Provides an easy-to-use GUI for jumping directly to a specific hive inside the MS Windows 
+Registry.
 
 ![image1](images/image1.png "This is the main window.")
 
 You can type or paste the string containing the hive directly into the field or select a previously 
-visited hive from the drop-down.
+visited hive from the drop-down list.
 
 ![image2](images/image2.png "This is the Open drop-down list expanded")
 
-You can optionally click the *Browse* button to open the registry to the last opened hive.
+You can optionally click the *Browse...* button to open the registry to the last opened hive.
 
 ### Options
 RegistryJump.exe can also be called directly from the command line.
@@ -30,9 +31,9 @@ RegistryJump.exe can also be called directly from the command line.
    
 This application allows you to quickly jump directly to a node in the registry using 1 of 3 methods:
 
- 1. Entering a registry key directly in the GUI (i.e., by launching the executable).
+ 1. Entering a registry key directly into a field the GUI (i.e., after launching the executable).
  2. Selecting the key from up to 20 previously visited "recent" keys from the combobox in the GUI.
- 3. Passing in the registry key as a parameter to the executable in commandline mode.
+ 3. Passing in the registry key as a parameter to the executable in command-line mode.
 
 HOW TO USE:
 
@@ -40,12 +41,12 @@ If RegistryJump.exe is missing, open this solution and build the assembly.
 
 The executable (assembly) will automatically be placed into the following directory:
 
-	"C:\Program Files (x86)\DevTools\RegistryJump"
+	"C:\Program Files (x86)\SokolTools\RegistryJump"
 
 
-Create a shortcut to the exe on your desktop if you'd like:
+Create a shortcut to the exe on your desktop (or elsewhere on your computer) if you'd like:
 
-	"%ProgramFiles(x86)%\DevTools\RegistryJump\RegistryJump.exe"
+	"%ProgramFiles(x86)%\SokoolTools\RegistryJump\RegistryJump.exe"
 	
 	Launch the exe or double-click the shortcut to open the GUI.
 	
@@ -56,7 +57,7 @@ Create a shortcut to the exe on your desktop if you'd like:
 	
 Create a shortcut to jump to a particular registry hive by simply passing a parameter to RegistryJump:
 
-	For example: "C:\Program Files (x86)\DevTools\RegistryJump\RegistryJump.exe" "HKEY_LOCAL_MACHINE\SOFTWARE\ACCESSNET"
+	For example: "C:\Program Files (x86)\SokoolTools\RegistryJump\RegistryJump.exe" "HKEY_LOCAL_MACHINE\SOFTWARE\ACCESSNET"
 	
 	(Now double-click the shortcut and you will be taken directly to that hive in the registry!)
 
@@ -66,7 +67,7 @@ SPECIAL NOTES:
 To make it easier to use - all enclosing 'spaces', 'double-quotes', 'square brackets' and 'backslashes' 
 are automatically trimmed from the string as well as any whitespace characters surrounding the internal quotation marks.
 
-	For example, all these work the same:
+	For example, all these will work the same:
 
 		"HKEY_LOCAL_MACHINE\SOFTWARE\ACCESSNET  ] "
 	or
@@ -83,9 +84,9 @@ You can specify the registry root key using any of the registry shortcuts (HKCR,
 	can be used in place of: 
 		"HKEY_LOCAL_MACHINE\SOFTWARE\ACCESSNET"
 		
-Anytime you launch RegistryJump (command line or via the GUI), the 20 most recent registry keys visited are recorded and displayed in the combobox.
+Anytime you launch RegistryJump (command-line or via the GUI), the 20 most recent registry keys visited are recorded and displayed in the combobox.
 
-You can easily delete individual recent items by dropping down the combobox using the <ALT> <Arrow> keys and then pressing the deleteKey on the keyboard.
+Although not obvious, you can easily delete individual 'recent items' by dropping down the combobox using the ALT ARROW keys and then pressing the DEL Key on the keyboard.
 Of course you can delete all the recent items by simply deleting the "RegistryJump.recent" file located in the executable's directory.
 
 ADDING REGISTRY JUMP SHORTCUT TO YOUR APPLICATIONS
