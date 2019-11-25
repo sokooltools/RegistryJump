@@ -2,12 +2,19 @@
 Provides an easy-to-use GUI for jumping directly to a specific hive inside the MS Windows 
 Registry.
 
-![image1](images/image1.png "This is the main window.")
+<hr/>
+<p>RegistryJump.exe</p>
+<p>Author : Ronn A. Sokol</p>
+<p>Company: SokoolTools</p>
+<p>History: Initial Release March 1, 2006</p>
+<hr/>
+   
+![image1](Images/image1.png "This is the main window.")
 
 You can type or paste the string containing the hive directly into the field or select a previously 
 visited hive from the drop-down list.
 
-![image2](images/image2.png "This is the Open drop-down list expanded")
+![image2](Images/image2.png "This is the Open drop-down list expanded")
 
 You can optionally click the *Browse...* button to open the registry to the last opened hive.
 
@@ -15,20 +22,13 @@ You can optionally click the *Browse...* button to open the registry to the last
 RegistryJump.exe can also be called directly from the command line.
 
 <p>For example:</p>
-<p style="Font-family:courier; Font-size:.75em;">&nbsp;"full\path\to\RegistryJump.exe" "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders"</p>
+<p style="Font-family:courier; Font-size:.75em;">&nbsp;"fullpath\to\RegistryJump.exe" "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders"</p>
 <p>or</p>
-<p style="Font-family:courier; Font-size:.75em;">&nbsp;"full\path\to\RegistryJump.exe" "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders"</p>
+<p style="Font-family:courier; Font-size:.75em;">&nbsp;"fullpath\to\RegistryJump.exe" "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders"</p>
 <p>or</p>
-<p style="Font-family:courier; Font-size:.75em;">&nbsp;"full\path\to\RegistryJump.exe" "[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders]"</p>
+<p style="Font-family:courier; Font-size:.75em;">&nbsp;"fullpath\to\RegistryJump.exe" "[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders]"</p>
 
-<hr/>
-<div>RegistryJump.exe</div>
-<div>Author : Ronn A. Sokol</div>
-<div>Company: SokoolTools</div>
-<div>History: Initial Release March 1, 2006</div>
-<hr/>
-   
-   
+<hr>   
 This application allows you to quickly jump directly to a node in the registry using 1 of 3 methods:
 
  1. Entering a registry key directly into a field the GUI (i.e., after launching the executable).
@@ -64,8 +64,8 @@ Create a shortcut to jump to a particular registry hive by simply passing a para
 
 SPECIAL NOTES:
 
-To make it easier to use - all enclosing 'spaces', 'double-quotes', 'square brackets' and 'backslashes' 
-are automatically trimmed from the string as well as any whitespace characters surrounding the internal quotation marks.
+To make it easier to use (i.e., more User-Friendly) - all enclosing 'spaces', 'double-quotes', 'square brackets' and 'backslashes' 
+are automatically trimmed from the entered string as well as any whitespace characters surrounding the internal quotation marks.
 
 	For example, all these will work the same:
 
@@ -76,7 +76,7 @@ are automatically trimmed from the string as well as any whitespace characters s
 		[HKEY_LOCAL_MACHINE\SOFTWARE\ACCESSNET]
 		
 	
-You can specify the registry root key using any of the registry shortcuts (HKCR, HKCU, HKLM, HKU, HKCC) as well.
+You can optionally specify the registry root key using any of the registry shortcuts (HKCR, HKCU, HKLM, HKU, HKCC).
 																					  
 	For example:																	 
 																					   
@@ -84,18 +84,21 @@ You can specify the registry root key using any of the registry shortcuts (HKCR,
 	can be used in place of: 
 		"HKEY_LOCAL_MACHINE\SOFTWARE\ACCESSNET"
 		
-Anytime you launch RegistryJump (command-line or via the GUI), the 20 most recent registry keys visited are recorded and displayed in the combobox.
+Anytime you launch RegistryJump (command-line or via the GUI), the 20 most recent registry keys visited are recorded and displayed in the combo-box.
 
 Although not obvious, you can easily delete individual 'recent items' by dropping down the combobox using the ALT ARROW keys and then pressing the DEL Key on the keyboard.
+
 Of course you can delete all the recent items by simply deleting the "RegistryJump.recent" file located in the executable's directory.
 
 ADDING REGISTRY JUMP SHORTCUT TO YOUR APPLICATIONS
 
 Note that in all cases below when there isn't any text selected in the respective UI, the RegistryJump.exe (UI) will be launched instead.
 
+The following show ways to integrate RegistryJump into other applications:
+
 *** Internet Explorer ******************************************************************
 
-	You can also add a right-click context menu shortcut to IE by following these steps:
+	Add a right-click context menu shortcut to IE by following these steps:
 	
 	1) Double-click the file "registryjump.reg" to automatically update the registry.
 	   (Note that you first have to edit the .reg file if you placed registryjump.exe in a folder other than the default)
@@ -116,7 +119,7 @@ Note that in all cases below when there isn't any text selected in the respectiv
 	
 	4) Enter "Registy &Jump" into the "Title" textbox.
 	
-	5) Enter "C:\Program Files (x86)\DevTools\RegistryJump\RegistryJump.exe" into the "Command" textbox
+	5) Enter "C:\Program Files (x86)\SokoolTools\RegistryJump\RegistryJump.exe" into the "Command" textbox
 	   or browse to it by clicking the "..." button to its right.
 	   
 	6) Enter "$(CurText)" into the "Arguments" textbox.
@@ -151,3 +154,5 @@ Note that in all cases below when there isn't any text selected in the respectiv
 	    and then select the "RegistryJump" menuitem from the Tools menu and you're off!
 
 *** NotePad++ ******************************************************************
+
+*** Google Chrome **************************************************************
