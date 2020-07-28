@@ -27,9 +27,10 @@ namespace DevTools.RegistryJump
 				try
 				{
 					var xml = new XmlSerializer(typeof(RecentList));
-					FileStream fs = File.Open(recentListFile, FileMode.Open);
-					RecentList = (RecentList)xml.Deserialize(fs);
-					fs.Close();
+					using (FileStream fs = File.Open(recentListFile, FileMode.Open))
+					{
+						RecentList = (RecentList)xml.Deserialize(fs);
+					}
 					return;
 				}
 				catch (Exception ex)
@@ -50,10 +51,11 @@ namespace DevTools.RegistryJump
 			try
 			{
 				string recentListFilename = Path.Combine(Path.GetDirectoryName(Application.UserAppDataPath) ?? "", "RegistryJump.recent");
-				FileStream fs = File.Open(recentListFilename, FileMode.Create, FileAccess.Write, FileShare.Read);
-				var xml = new XmlSerializer(typeof(RecentList));
-				xml.Serialize(fs, RecentList);
-				fs.Close();
+				using (FileStream fs = File.Open(recentListFilename, FileMode.Create, FileAccess.Write, FileShare.Read))
+				{
+					var xml = new XmlSerializer(typeof(RecentList));
+					xml.Serialize(fs, RecentList);
+				}
 			}
 			catch (Exception ex)
 			{
@@ -66,9 +68,9 @@ namespace DevTools.RegistryJump
 		/// Sorts the recent list.
 		/// </summary>
 		//------------------------------------------------------------------------------------------------------------------------
-		public static void SortRecentList()
+		public static void SortRecentList(SortOrder sortOrder = SortOrder.Ascending)
 		{
-			RecentList.Sort(true);
+			RecentList.Sort(sortOrder);
 		}
 	}
 }

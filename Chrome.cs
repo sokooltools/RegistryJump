@@ -60,31 +60,31 @@ namespace DevTools.RegistryJump
 				// Read first 4 bytes for length information
 				stdin.Read(buff, 0, 4);
 				int len = BitConverter.ToInt32(buff, 0);
-				string json = string.Empty;
+				string json = String.Empty;
 				for (int i = 0; i < len; i++)
 					json += (char)stdin.ReadByte();
 				return json;
 			}
 		}
 
-		//------------------------------------------------------------------------------------------------------------------------
-		/// <summary>
-		/// Opens the standard output stream.
-		/// </summary>
-		/// <param name="json">The json message.</param>
-		//------------------------------------------------------------------------------------------------------------------------
-		private static void OpenStandardStreamOut(string json)
-		{
-			using (Stream stdout = Console.OpenStandardOutput())
-			{
-				byte[] buff = Encoding.UTF8.GetBytes(json);
-				// Write first 4 bytes for length information
-				stdout.Write(BitConverter.GetBytes(buff.Length), 0, 4);
-				// Write the message,
-				stdout.Write(buff, 0, buff.Length);
-				stdout.Flush();
-			}
-		}
+		////------------------------------------------------------------------------------------------------------------------------
+		///// <summary>
+		///// Opens the standard output stream.
+		///// </summary>
+		///// <param name="json">The json message.</param>
+		////------------------------------------------------------------------------------------------------------------------------
+		//private static void OpenStandardStreamOut(string json)
+		//{
+		//	using (Stream stdout = Console.OpenStandardOutput())
+		//	{
+		//		byte[] buff = Encoding.UTF8.GetBytes(json);
+		//		// Write first 4 bytes for length information
+		//		stdout.Write(BitConverter.GetBytes(buff.Length), 0, 4);
+		//		// Write the message,
+		//		stdout.Write(buff, 0, buff.Length);
+		//		stdout.Flush();
+		//	}
+		//}
 
 		//------------------------------------------------------------------------------------------------------------------------
 		/// <summary>

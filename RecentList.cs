@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// (c) Copyright 2006-2007  SokoolTools
+// (c) Copyright 2006-2020  SokoolTools
 //
 // Description: RecentList Class
 //
@@ -9,8 +9,10 @@
 // 12/01/06	RSokol			Initial Development
 //////////////////////////////////////////////////////////////////////////////
 
-using System.Collections;
-using System.Collections.Specialized;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DevTools.RegistryJump
 {
@@ -23,7 +25,7 @@ namespace DevTools.RegistryJump
 		//----------------------------------------------------------------------------------------------------
 		public RecentList()
 		{
-			RecentKeys = new StringCollection();
+			RecentKeys = new List<string>();
 		}
 
 		//----------------------------------------------------------------------------------------------------
@@ -31,7 +33,7 @@ namespace DevTools.RegistryJump
 		/// 
 		/// </summary>
 		//----------------------------------------------------------------------------------------------------
-		public StringCollection RecentKeys { get; }
+		public List<string> RecentKeys { get; private set; }
 
 		//----------------------------------------------------------------------------------------------------
 		/// <summary>
@@ -41,7 +43,7 @@ namespace DevTools.RegistryJump
 		//----------------------------------------------------------------------------------------------------
 		public void UpdateRecentKeys(string currentKey)
 		{
-			if (string.IsNullOrEmpty(currentKey))
+			if (String.IsNullOrEmpty(currentKey))
 				return;
 			// Make sure the key is deleted if it already exists
 			DeleteRecentKey(currentKey);
@@ -60,7 +62,7 @@ namespace DevTools.RegistryJump
 		//----------------------------------------------------------------------------------------------------
 		public void DeleteRecentKey(string currentKey)
 		{
-			if (!string.IsNullOrEmpty(currentKey) && RecentKeys.Contains(currentKey))
+			if (!String.IsNullOrEmpty(currentKey) && RecentKeys.Contains(currentKey))
 				RecentKeys.Remove(currentKey);
 		}
 
@@ -68,22 +70,13 @@ namespace DevTools.RegistryJump
 		/// <summary>
 		/// 
 		/// </summary>
-		/// <param name="ascending"></param>
+		/// <param name="sortOrder"></param>
 		//----------------------------------------------------------------------------------------------------
-		public void Sort(bool ascending)
+		public void Sort(SortOrder sortOrder = SortOrder.Ascending)
 		{
-			// Make an array out of the collection so it can be sorted.
-			var aList = new ArrayList(RecentKeys.Count);
-
-			foreach (string s in RecentKeys)
-				aList.Add(s);
-
-			aList.Sort();
-
-			// Rebuild the collection from the array.
-			RecentKeys.Clear();
-			foreach (string s in aList)
-				RecentKeys.Add(s);
+			RecentKeys = sortOrder == SortOrder.Ascending
+				? RecentKeys.OrderBy(m => m.ToLowerInvariant()).ToList()
+				: RecentKeys.OrderByDescending(m => m.ToLowerInvariant()).ToList();
 		}
 	}
 }

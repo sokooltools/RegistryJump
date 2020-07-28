@@ -38,7 +38,7 @@ namespace DevTools.RegistryJump
 		/// Short description of registry key. For example: "HKLM"
 		/// </summary>
 		//----------------------------------------------------------------------------------------------------
-		public string Hk;
+		private string _hk;
 
 		//----------------------------------------------------------------------------------------------------
 		/// <summary>
@@ -59,7 +59,7 @@ namespace DevTools.RegistryJump
 		/// The Registry key class. For example: Registry.LocalMachine
 		/// </summary>
 		//----------------------------------------------------------------------------------------------------
-		public readonly RegistryKey Key;
+		private readonly RegistryKey _key;
 
 		//----------------------------------------------------------------------------------------------------
 		/// <summary>
@@ -69,9 +69,9 @@ namespace DevTools.RegistryJump
 		//----------------------------------------------------------------------------------------------------
 		public string GetFullname()
 		{
-			string fullname = @"Computer\" + Hkey;
+			string fullname = $@"Computer\{Hkey}";
 			if (Name.Length > 0)
-				fullname += @"\" + Name;
+				fullname += $@"\{Name}";
 			return fullname;
 		}
 
@@ -84,12 +84,12 @@ namespace DevTools.RegistryJump
 		/// <param name="name">The name.</param>
 		/// <param name="key">The key.</param>
 		//----------------------------------------------------------------------------------------------------
-		public KeyInfo(string hk, string hkey, string name, RegistryKey key)
+		private KeyInfo(string hk, string hkey, string name, RegistryKey key)
 		{
-			Hk = hk;
+			_hk = hk;
 			Hkey = hkey;
 			Name = name;
-			Key = key;
+			_key = key;
 		}
 
 		//----------------------------------------------------------------------------------------------------
@@ -100,7 +100,7 @@ namespace DevTools.RegistryJump
 		/// <param name="desc">The desc.</param>
 		/// <returns></returns>
 		//----------------------------------------------------------------------------------------------------
-		public static string GetName(string key, string desc)
+		private static string GetName(string key, string desc)
 		{
 			return key.Length > desc.Length + 1 ? key.Substring(desc.Length + 1) : "";
 		}
@@ -186,14 +186,14 @@ namespace DevTools.RegistryJump
 
 			while (true)
 			{
-				RegistryKey subKey = ki.Key.OpenSubKey(subName);
+				RegistryKey subKey = ki._key.OpenSubKey(subName);
 				if (subKey != null)
 					break;
 
 				int tokenLength = subName.LastIndexOf(@"\", StringComparison.Ordinal);
 				if (tokenLength == -1)
 				{
-					subName = string.Empty;
+					subName = String.Empty;
 					break;
 				}
 				subName = subName.Substring(0, tokenLength);
@@ -201,7 +201,7 @@ namespace DevTools.RegistryJump
 
 			ki.Name = subName;
 
-			ki.Key.Close();
+			ki._key.Close();
 
 			return ki;
 		}

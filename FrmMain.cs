@@ -45,7 +45,7 @@ namespace DevTools.RegistryJump
 		private string CurrentKey
 		{
 			get => cboKey.Text;
-			set => cboKey.Text = value;
+			//set => cboKey.Text = value;
 		}
 
 		//----------------------------------------------------------------------------------------------------
@@ -128,7 +128,7 @@ namespace DevTools.RegistryJump
 		private void cboKey_KeyDown(object sender, KeyEventArgs e)
 		{
 			// Check if the delete key is pressed while the menu is dropped down.
-			if (e.KeyCode != Keys.Delete || !cboKey.DroppedDown || string.IsNullOrEmpty(CurrentKey)) return;
+			if (e.KeyCode != Keys.Delete || !cboKey.DroppedDown || String.IsNullOrEmpty(CurrentKey)) return;
 			History.RecentList.DeleteRecentKey(CurrentKey);
 
 			History.SaveRecentListToFile();
