@@ -21,13 +21,13 @@ namespace DevTools.RegistryJump
 
 		//----------------------------------------------------------------------------------------------------
 		/// <summary>
-		/// Starts the regedit executable jumping directly to the specified key.
+		/// Starts the RegEdit executable jumping directly to the specified key.
 		/// </summary>
 		/// <param name="key">The registry key that should be selected.</param>
 		//----------------------------------------------------------------------------------------------------
 		public static void OpenRegistryEditor(string key)
 		{
-			// Quit running instance of regedit.
+			// Quit running instance of RegEdit.
 			Process[] process = Process.GetProcessesByName("regedit");
 			if (process.Length == 1)
 				process[0].Kill();
@@ -39,8 +39,8 @@ namespace DevTools.RegistryJump
 			CurrentKey = $@"{keyInfo.Hkey}\{keyInfo.Name}";
 
 			// Save the current key. 
-			using (RegistryKey registrykey = Registry.CurrentUser.OpenSubKey(SAVE_LAST_KEY, true))
-				registrykey?.SetValue("Lastkey", keyInfo.GetFullname());
+			using (RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(SAVE_LAST_KEY, true))
+				registryKey?.SetValue("Lastkey", keyInfo.GetFullname());
 
 			// Launch the registry editor.
 			StartRegistryEditor();
@@ -48,7 +48,7 @@ namespace DevTools.RegistryJump
 
 		//----------------------------------------------------------------------------------------------------
 		/// <summary>
-		/// Starts the regedit executable.
+		/// Starts the RegEdit executable.
 		/// </summary>
 		//----------------------------------------------------------------------------------------------------
 		public static void StartRegistryEditor()

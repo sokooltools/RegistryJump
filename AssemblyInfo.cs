@@ -5,7 +5,7 @@ using System.Reflection;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SokoolTools")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("2006-2019")]
+[assembly: AssemblyCopyright("2006-2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 [assembly: AssemblyVersion("2.0.*")]

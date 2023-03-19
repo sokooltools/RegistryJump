@@ -1,12 +1,8 @@
 //////////////////////////////////////////////////////////////////////////////
-// (c) Copyright 2006-2019  SokoolTools
+// (c) Copyright 2006-2023  SokoolTools
 //
 // Description: Main Form
 //
-// Modification Notes:
-// Date		Author        	Notes
-// -------- -------------- --------------------------------------------------
-// 12/01/06	RSokol			Initial Development
 //////////////////////////////////////////////////////////////////////////////
 
 using System;
@@ -42,18 +38,13 @@ namespace DevTools.RegistryJump
 		/// </summary>
 		/// <value>The current key.</value>
 		//----------------------------------------------------------------------------------------------------
-		private string CurrentKey
-		{
-			get => cboKey.Text;
-			//set => cboKey.Text = value;
-		}
+		private string CurrentKey => cboKey.Text;
+
 
 		//----------------------------------------------------------------------------------------------------
 		/// <summary>
 		/// Handles the Load event of the Form control.
 		/// </summary>
-		/// <param name="sender">The source of the event.</param>
-		/// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
 		//----------------------------------------------------------------------------------------------------
 		private void Form_Load(object sender, EventArgs e)
 		{
@@ -74,10 +65,8 @@ namespace DevTools.RegistryJump
 		/// <summary>
 		/// Handles the Click event of the btnOK control.
 		/// </summary>
-		/// <param name="sender">The source of the event.</param>
-		/// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
 		//----------------------------------------------------------------------------------------------------
-		private void btnOK_Click(object sender, EventArgs e)
+		private void BtnOK_Click(object sender, EventArgs e)
 		{
 			try
 			{
@@ -94,11 +83,12 @@ namespace DevTools.RegistryJump
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message, @"RegistryJump", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				if (ex.HResult != -2147467259) // Opening of RegEdit was cancelled by user.
+					MessageBox.Show(ex.Message, @"RegistryJump", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
-		private void btnCancel_Click(object sender, EventArgs e)
+		private void BtnCancel_Click(object sender, EventArgs e)
 		{
 			Close();
 		}
@@ -107,10 +97,8 @@ namespace DevTools.RegistryJump
 		/// <summary>
 		/// Handles the Click event of the btnBrowse control.
 		/// </summary>
-		/// <param name="sender">The source of the event.</param>
-		/// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
 		//----------------------------------------------------------------------------------------------------
-		private void btnBrowse_Click(object sender, EventArgs e)
+		private void BtnBrowse_Click(object sender, EventArgs e)
 		{
 			RegistryEditor.StartRegistryEditor();
 			Close();
@@ -125,7 +113,7 @@ namespace DevTools.RegistryJump
 		/// The <see cref="System.Windows.Forms.KeyEventArgs"/> instance containing the event data.
 		/// </param>
 		//----------------------------------------------------------------------------------------------------
-		private void cboKey_KeyDown(object sender, KeyEventArgs e)
+		private void CboKey_KeyDown(object sender, KeyEventArgs e)
 		{
 			// Check if the delete key is pressed while the menu is dropped down.
 			if (e.KeyCode != Keys.Delete || !cboKey.DroppedDown || String.IsNullOrEmpty(CurrentKey)) return;
@@ -151,7 +139,7 @@ namespace DevTools.RegistryJump
 		/// <param name="sender">The source of the event.</param>
 		/// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
 		//----------------------------------------------------------------------------------------------------
-		private void chkSort_CheckedChanged(object sender, EventArgs e)
+		private void ChkSort_CheckedChanged(object sender, EventArgs e)
 		{
 			// Reload the combobox based on the current sort indicator.
 			FillComboBox();

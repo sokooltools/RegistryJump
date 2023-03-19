@@ -12,15 +12,19 @@ namespace DevTools.RegistryJump
 {
 	partial class FrmMain
 	{
+		//----------------------------------------------------------------------------------------------------
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
+		//----------------------------------------------------------------------------------------------------
 		private System.ComponentModel.IContainer components = null;
 
+		//----------------------------------------------------------------------------------------------------
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		//----------------------------------------------------------------------------------------------------
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && (components != null))
@@ -30,12 +34,16 @@ namespace DevTools.RegistryJump
 			base.Dispose(disposing);
 		}
 
+		//.............................................................................................................
+
 		#region Windows Form Designer generated code
 
+		//----------------------------------------------------------------------------------------------------
 		/// <summary>
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
+		//----------------------------------------------------------------------------------------------------
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
@@ -71,7 +79,7 @@ namespace DevTools.RegistryJump
 			this.btnBrowse.Size = new System.Drawing.Size(80, 23);
 			this.btnBrowse.TabIndex = 12;
 			this.btnBrowse.Text = "Browse...";
-			this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+			this.btnBrowse.Click += new System.EventHandler(this.BtnBrowse_Click);
 			// 
 			// btnCancel
 			// 
@@ -83,19 +91,19 @@ namespace DevTools.RegistryJump
 			this.btnCancel.Size = new System.Drawing.Size(80, 23);
 			this.btnCancel.TabIndex = 11;
 			this.btnCancel.Text = "Cancel";
-			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+			this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
 			// 
 			// label2
 			// 
 			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			                                                           | System.Windows.Forms.AnchorStyles.Right)));
+																	   | System.Windows.Forms.AnchorStyles.Right)));
 			this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label2.Location = new System.Drawing.Point(49, 16);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(428, 38);
 			this.label2.TabIndex = 10;
 			this.label2.Text = "Enter the name of a registry key or select it from the recent list, and RegistryJ" +
-			                   "ump will open it for you.";
+							   "ump will open it for you.";
 			// 
 			// btnOK
 			// 
@@ -106,7 +114,7 @@ namespace DevTools.RegistryJump
 			this.btnOK.Size = new System.Drawing.Size(80, 23);
 			this.btnOK.TabIndex = 9;
 			this.btnOK.Text = "OK";
-			this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+			this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
 			// 
 			// label1
 			// 
@@ -120,12 +128,12 @@ namespace DevTools.RegistryJump
 			// cboKey
 			// 
 			this.cboKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			                                                           | System.Windows.Forms.AnchorStyles.Right)));
+																	   | System.Windows.Forms.AnchorStyles.Right)));
 			this.cboKey.Location = new System.Drawing.Point(49, 61);
 			this.cboKey.Name = "cboKey";
 			this.cboKey.Size = new System.Drawing.Size(423, 21);
 			this.cboKey.TabIndex = 7;
-			this.cboKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboKey_KeyDown);
+			this.cboKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CboKey_KeyDown);
 			// 
 			// chkSort
 			// 
@@ -137,7 +145,7 @@ namespace DevTools.RegistryJump
 			this.chkSort.TabIndex = 14;
 			this.chkSort.Text = "Sort the Recent List";
 			this.chkSort.UseVisualStyleBackColor = true;
-			this.chkSort.CheckedChanged += new System.EventHandler(this.chkSort_CheckedChanged);
+			this.chkSort.CheckedChanged += new System.EventHandler(this.ChkSort_CheckedChanged);
 			// 
 			// frmMain
 			// 
@@ -174,14 +182,14 @@ namespace DevTools.RegistryJump
 
 		#endregion
 
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button btnBrowse;
 		private System.Windows.Forms.Button btnCancel;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btnOK;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox cboKey;
-		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.CheckBox chkSort;
+		private System.Windows.Forms.ComboBox cboKey;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.ToolTip toolTip1;
 	}
 }
