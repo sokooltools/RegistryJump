@@ -62,8 +62,7 @@ namespace DevTools.RegistryJump
 			}
 			catch (Exception ex)
 			{
-				if (ex.HResult != -2147467259) // Opening of RegEdit was cancelled by user.
-					MessageBox.Show(ex.Message, @"RegistryJump", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(ex.Message, @"RegistryJump", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			Application.Exit();
 		}

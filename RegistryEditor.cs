@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using Microsoft.Win32;
 
 namespace DevTools.RegistryJump
@@ -53,7 +54,15 @@ namespace DevTools.RegistryJump
 		//----------------------------------------------------------------------------------------------------
 		public static void StartRegistryEditor()
 		{
-			Process.Start("regedit.exe");
+			try
+			{
+				Process.Start("regedit.exe");
+			}
+			catch (Exception ex)
+			{
+				if (ex.HResult != -2147467259) // Operation was cancelled by user.
+					throw;
+			}
 		}
 	}
 }
