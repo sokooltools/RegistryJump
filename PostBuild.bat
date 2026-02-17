@@ -5,7 +5,7 @@ if "%5" NEQ "" (goto:SKIP)
 title SokoolTools: Post-Build
 
 @echo ===============================================================================================================
-@echo = (c) 2012-2019 SokoolTools.
+@echo = (c) 2012-2025 SokoolTools.
 @echo =
 @echo = This batch file is used for post-build configuration and should be called directly from the Visual Studio 
 @echo = project's [Post-Build] event command-line using the following syntax:

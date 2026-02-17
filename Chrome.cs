@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -58,10 +57,10 @@ namespace DevTools.RegistryJump
 			{
 				var buff = new byte[4];
 				// Read first 4 bytes for length information
-				stdin.Read(buff, 0, 4);
-				int len = BitConverter.ToInt32(buff, 0);
-				string json = String.Empty;
-				for (int i = 0; i < len; i++)
+				int unused = stdin.Read(buff, 0, 4);
+				var len = BitConverter.ToInt32(buff, 0);
+				var json = String.Empty;
+				for (var i = 0; i < len; i++)
 					json += (char)stdin.ReadByte();
 				return json;
 			}

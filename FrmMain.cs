@@ -78,7 +78,7 @@ namespace DevTools.RegistryJump
 				// Save recent list to file.
 				History.SaveRecentListToFile();
 
-				Close();
+				//Close();
 			}
 			catch (Exception ex)
 			{
@@ -125,7 +125,7 @@ namespace DevTools.RegistryJump
 
 			if (History.RecentList.RecentKeys.Count > 0)
 			{
-				// Continue to show the menu choices as dropped down.
+				// Continue to show the menu choices drop down.
 				cboKey.DroppedDown = true;
 			}
 		}

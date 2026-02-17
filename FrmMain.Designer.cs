@@ -74,7 +74,7 @@ namespace DevTools.RegistryJump
 			this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnBrowse.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.btnBrowse.Location = new System.Drawing.Point(392, 98);
+			this.btnBrowse.Location = new System.Drawing.Point(302, 98);
 			this.btnBrowse.Name = "btnBrowse";
 			this.btnBrowse.Size = new System.Drawing.Size(80, 23);
 			this.btnBrowse.TabIndex = 12;
@@ -86,24 +86,24 @@ namespace DevTools.RegistryJump
 			this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.btnCancel.Location = new System.Drawing.Point(304, 98);
+			this.btnCancel.Location = new System.Drawing.Point(392, 98);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(80, 23);
 			this.btnCancel.TabIndex = 11;
-			this.btnCancel.Text = "Cancel";
+			this.btnCancel.Text = "Close";
 			this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
 			// 
 			// label2
 			// 
-			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-																	   | System.Windows.Forms.AnchorStyles.Right)));
+			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label2.Location = new System.Drawing.Point(49, 16);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(428, 38);
 			this.label2.TabIndex = 10;
 			this.label2.Text = "Enter the name of a registry key or select it from the recent list, and RegistryJ" +
-							   "ump will open it for you.";
+    "ump will open it for you.";
 			// 
 			// btnOK
 			// 
@@ -113,25 +113,25 @@ namespace DevTools.RegistryJump
 			this.btnOK.Name = "btnOK";
 			this.btnOK.Size = new System.Drawing.Size(80, 23);
 			this.btnOK.TabIndex = 9;
-			this.btnOK.Text = "OK";
+			this.btnOK.Text = "Jump";
 			this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
 			// 
 			// label1
 			// 
 			this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.label1.Location = new System.Drawing.Point(9, 63);
+			this.label1.Location = new System.Drawing.Point(10, 63);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(32, 21);
+			this.label1.Size = new System.Drawing.Size(64, 19);
 			this.label1.TabIndex = 8;
-			this.label1.Text = "Open:";
+			this.label1.Text = "Recent List:";
 			// 
 			// cboKey
 			// 
-			this.cboKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-																	   | System.Windows.Forms.AnchorStyles.Right)));
-			this.cboKey.Location = new System.Drawing.Point(49, 61);
+			this.cboKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.cboKey.Location = new System.Drawing.Point(68, 61);
 			this.cboKey.Name = "cboKey";
-			this.cboKey.Size = new System.Drawing.Size(423, 21);
+			this.cboKey.Size = new System.Drawing.Size(404, 21);
 			this.cboKey.TabIndex = 7;
 			this.cboKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CboKey_KeyDown);
 			// 
@@ -139,7 +139,7 @@ namespace DevTools.RegistryJump
 			// 
 			this.chkSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.chkSort.AutoSize = true;
-			this.chkSort.Location = new System.Drawing.Point(49, 98);
+			this.chkSort.Location = new System.Drawing.Point(68, 98);
 			this.chkSort.Name = "chkSort";
 			this.chkSort.Size = new System.Drawing.Size(121, 17);
 			this.chkSort.TabIndex = 14;
@@ -147,7 +147,7 @@ namespace DevTools.RegistryJump
 			this.chkSort.UseVisualStyleBackColor = true;
 			this.chkSort.CheckedChanged += new System.EventHandler(this.ChkSort_CheckedChanged);
 			// 
-			// frmMain
+			// FrmMain
 			// 
 			this.AcceptButton = this.btnOK;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,8 +160,8 @@ namespace DevTools.RegistryJump
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.btnOK);
-			this.Controls.Add(this.label1);
 			this.Controls.Add(this.cboKey);
+			this.Controls.Add(this.label1);
 			this.Font = new System.Drawing.Font("Tahoma", 8.25F);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
 			this.MaximizeBox = false;
